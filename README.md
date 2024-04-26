@@ -1,8 +1,6 @@
 # casso
 A test of Casso company
 
-Change to branch "master" to run
-
 Clone the repository and install dependencies:
     1. npm install
 
