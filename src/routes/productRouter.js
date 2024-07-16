@@ -5,5 +5,7 @@ const productController=require('../app/controllers/ProductController')
 
 router.get('/', productController.product)
 
+router.get('/detail', productController.detail)
+
 
 module.exports = router

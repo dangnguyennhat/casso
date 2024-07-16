@@ -1,0 +1,477 @@
+<style>
+    .nav-link.active{
+        background-color: aliceblue;
+    }
+</style>
+
+<div class="container text-center pt-3">
+    <div class="row">
+        <div class="col-3 d-flex text-start">
+            <div class="sidebar">
+                <h4 class="title">Các chính sách cửa hàng</h4>
+                <ul class="nav flex-column pl-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#" onclick="loadContent('warranty', this), text-primary">Chính sách bảo hành</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#" onclick="loadContent('shipping', this)">Chính sách vận chuyển</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#" onclick="loadContent('payment', this)">Chính sách thanh toán</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#" onclick="loadContent('return', this)">Chính sách đổi trả, khiếu nại</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#" onclick="loadContent('security', this)">Chính sách bảo mật</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="content" id="main-content">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const content = {
+        warranty: `
+                <div className="ThePolicy" class="container-fluid border border-dark rounded-3">
+                    <div className="policy-header" class="text-center fw-bold fs-2">
+                        Chính sách bảo hành
+                    </div>
+                    <div className="policy-content" class="text-start">
+                        <div className="heading1" class="fw-medium fs-4 text-primary text-start">
+                            Điều kiện bảo hành
+                        </div>
+                        <div className="text-strong" class="fw-medium">
+                            (UNI CLO chỉ hỗ trợ bảo hành sản phẩm hư hỏng trong điều kiện sử
+                            dụng bình thường theo tiêu chuẩn của nhà sản xuất)
+                        </div>
+                        <div className="text-strong" class="fw-medium">
+                            Tháng 1
+                        </div>
+                        <ul>
+                            <li>
+                                1 đổi 1 tại nhà, nếu hết hàng đổi máy khác BK Robotic trả lại tiền
+                                chênh lệch nếu có.
+                            </li>
+                            <li>Hoặc trả máy thì nhận lại tiền 80% giá trị máy.</li>
+                            <li>Khách hàng phải giữ nguyên vỏ hộp và phụ kiện đi kèm.</li>
+                        </ul>
+                        <div className="text-strong" class="fw-medium">Tháng 2 – 12</div>
+                        <ul>
+                            <li>
+                                BK Robotic hỗ trợ bảo hành theo tiêu chuẩn hãng hoặc chuyển hãng
+                                bảo hành khi cần.
+                            </li>
+                        </ul>
+                        <div className="text-strong" class="fw-medium">Tháng 2 – 12</div>
+                        <ul>
+                            <li>
+                                Không đổi trả, BK Robotic hỗ trợ bảo hành theo tiêu chuẩn hãng
+                                hoặc chuyển hãng bảo hành khi cần.
+                            </li>
+                            <li>Sản phẩm không lỗi Không đổi trả.</li>
+                            <li>
+                                Sản phẩm lỗi do người dùng Không bảo hành đổi trả. BK Robotic hỗ
+                                trợ chuyển hãng bảo hành, khách hàng chịu phí sửa chữa.
+                            </li>
+                        </ul>
+                        <div className="heading1" class="fs-4 fw-medium text-start text-primary">Những trường hợp không được bảo hành</div>
+                        <ul>
+                            <li>
+                                Khách hàng tự động tháo máy.
+                            </li>
+                            <li>
+                                Sử dụng sai tiêu chuẩn của nhà sản xuất.
+                            </li>
+                            <li>
+                                Sử dụng sai điện áp quy định, quá công suất của thiết bị hoặc cháy
+                                nổ, rơi vỡ, va đập, hỏng hóc vật lý.
+                            </li>
+                            <li>
+                                Các lỗi do người dùng để cạn pin và không sạc trong thời gian dài
+                                dẫn đến máy không thể sạc được. Hoàng Kiên sẽ hỗ trợ chi phí thay
+                                pin giá hợp lý nhất cho các bạn.
+                            </li>
+                            <li>
+                                Hư hỏng do thiên tai, hỏa hoạn, động vật, côn trùng hoặc con người
+                                làm hỏng.
+                            </li>
+                            <li>
+                                Hư hỏng do khách hàng thay đổi ROM hoặc can thiệp đến hệ điều hành
+                                máy;
+                            </li>
+                            <li>
+                                Quá thời hạn bảo hành ghi trên phiếu bảo hành.
+                            </li>
+                            <li>
+                                Không có phiếu bảo hành, phiếu bảo hành không đúng hoặc phiếu bảo
+                                hành bị tẩy xóa, không nguyên vẹn.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            `,
+        shipping: `
+                <div className="ThePolicy" class="text-start container-fluid border border-dark rounded-3">
+                    <div className="policy-header" class="text-center fs-2 fw-bold">
+                        Chính sách vận chuyển
+                    </div>
+                    <div className="policy-content">
+                    <div className="text-strong" class="fw-medium">
+                        BK Robotic có dịch vụ vận chuyển uy tín, đảm bảo các mặt hàng đến
+                        tay quý khách được an toàn.
+                    </div>
+                    <div className="heading1" class="fs-4 fw-medium text-primary">
+                        Cách 1: Giao hàng trực tiếp tại cửa hàng
+                    </div>
+                    <p class="text-justify">
+                        Hãy trực tiếp đến địa chỉ các showroom của BK Robotic để lựa chọn
+                        sản phẩm, thanh toán và nhận sản phẩm trực tiếp tại cửa hàng.
+                    </p>
+
+                    <div className="heading1" class="fs-4 fw-medium text-primary">
+                        Cách 2: Giao hàng miễn phí nội thành TP Hồ Chí Minh
+                    </div>
+                    <p class="text-justify">
+                        Nếu bạn không muốn trực tiếp đến cửa hàng. BK Robotic sẵn sàng giao
+                        hàng miễn phí trong các quận nội thành Thành phố Hồ Chí Minh . Xin
+                        vui lòng gọi số hotline để đặt hàng và nhận sản phẩm tại địa chỉ bạn
+                        mong muốn.
+                    </p>
+                    <div className="heading1" class="fs-4 fw-medium text-primary">
+                        Cách 3: Sử dụng hình thức Giao hàng thu tiền – COD (Cash on
+                        Delivery)
+                    </div>
+                    <p class="text-justify">
+                        Đối với các bạn ở xa Tp Hồ Chí Minh, muốn sử dụng hình thức COD
+                        (thanh toán khi nhận hàng), các bạn vui lòng liên hệ với BK Robotic
+                        để được hướng dẫn. Đây là hình thức thanh toán COD (Cash on
+                        Delivery) – Các bạn sẽ thanh toán trực tiếp cho bên chuyển phát sau
+                        khi đã nhận được hàng. Với hình thức này, để đảm bảo đơn hàng được
+                        xác nhận, BK Robotic có 2 hình thức mua hàng và thanh toán như sau:
+                    </p>
+                    <ul>
+                        <li>
+                        Một là, chuyển khoản đặt cọc trước từ 200.000 – 500.000 VNĐ. Khi
+                        nhận được hàng khách hàng sẽ thanh toán nốt số tiền còn lại và
+                        tiền cước vận chuyển.
+                        </li>
+                        <li>
+                        Hai là, Chuyển khoản toàn bộ 100% tiền hàng. Bạn sẽ được BK
+                        Robotic hỗ trợ cước phí vận chuyển tùy thuộc vào giá trị đơn hàng.
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+            `,
+        payment: `
+                <div className="ThePolicy" class=" container-fluid text-start border border-dark rounded-3 ">
+                    <div className="policy-header" class="text-center fw-bold fs-2">Chính sách thanh toán</div>
+                    <div className="policy-content">
+                    <div className="text-strong" class="fw-medium">
+                        Khách hàng có thể tham khảo các phương thức thanh toán sau đây và
+                        lựa chọn áp dụng phương thức phù hợp:
+                    </div>
+                    <div className="heading1" class="fw-medium fs-4 text-primary">
+                        Thanh toán trực tiếp (Khách hàng nhận hàng tại showroom):
+                    </div>
+                    <p>
+                        Quý khách có thể sử dụng tiền mặt, chuyển khoản, VNPAY QR hoặc quẹt
+                        thẻ…
+                    </p>
+
+                    <div className="heading1" class="fw-medium fs-4 text-primary">
+                        Thanh toán sau (COD – giao hàng và thu tiền tận nơi):
+                    </div>
+                    <p>
+                        Quý khách hàng ở các tỉnh tp trên lãnh thổ Việt Nam, khi nhận hàng
+                        và kiểm tra hàng xong quý khách sẽ thanh toán tiền mặt cho nhân viên
+                        giao hàng.
+                    </p>
+
+                    <div className="heading1" class="fw-medium fs-4 text-primary">
+                        Thanh toán online qua thẻ tín dụng, chuyển khoản:
+                    </div>
+                    <p class="text-justify">
+                        Đối với các bạn ở xa Tp Hồ Chí Minh, muốn sử dụng hình thức COD
+                        (thanh toán khi nhận hàng), các bạn vui lòng liên hệ với BK Robotic
+                        để được hướng dẫn. Đây là hình thức thanh toán COD (Cash on
+                        Delivery) – Các bạn sẽ thanh toán trực tiếp cho bên chuyển phát sau
+                        khi đã nhận được hàng. Với hình thức này, để đảm bảo đơn hàng được
+                        xác nhận, BK Robotic có 2 hình thức mua hàng và thanh toán như
+                        sau:BK Robotic chấp nhận hình thức thanh toán chuyển khoản ngân
+                        hàng, quý khách có thể chuyển khoản vào một trong các ngân hàng dưới
+                        đây:
+                    </p>
+                    <ul>
+                        <li>
+                        <div className="text-strong">
+                            Ngân hàng OCB – Chi nhánh Thủ Đức
+                        </div>
+                        <div>Tên tài khoản: Trương Ngọc Trúc Quỳnh</div>
+                        <div>Số Tài khoản: 0003100013385004</div>
+                        </li>
+                        <li>
+                        <div className="text-strong">
+                            Ngân hàng BIDV – Chi nhánh Thủ Đức
+                        </div>
+                        <div>Tên tài khoản: Nguyễn Trâm Anh</div>
+                        <div>Số Tài khoản: 11110000088864</div>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+            `,
+        return: `
+                <div className="ThePolicy" class="container-fluid text-start border border-dark rounded-3">
+                    <div className="policy-header" class="text-center fw-bold fs-2">Chính sách đổi trả, khiếu nại</div>
+                    <div className="policy-content">
+                    <div className="text-strong" class="fw-medium">
+                        Chúng tôi có quy trình xử lý chuyên nghiệp trong trường hợp quý
+                        khách có yêu cầu đổi trả sản phẩm hoặc khiếu nại về sản phậm, chất
+                        lượng dịch vụ. Với tinh thần bảo vệ quyền lợi khách hàng là trên
+                        hết, quý khách có thể an tâm mua sắm tại BK Robotic.
+                    </div>
+                    <div className="heading1" class="text-primary fw-medium fs-4">Điều kiện đổi trả </div>
+                    <ul>
+                        <li>
+                        Sản phẩm còn nguyên vẹn, đầy đủ bao bì vỏ hộp, hóa đơn mua hàng,
+                        máy còn nguyên vẹn không bị trầy xước.
+                        </li>
+                        <li>Thời gian: trong vòng 07 ngày kể từ ngày mua.</li>
+                        <li>Đủ điều kiện bảo hành của nhà sản xuất.</li>
+                        <div class="fst-italic">
+                        <div className="text-strong" class="fw-medium">Lưu ý:</div> Các sản phẩm không được
+                        đổi trả: đã hết thời gian đổi trả, không còn đầy đủ, nguyên vẹn,
+                        bị móp méo, sản phẩm trầy xước.
+                        </div>
+                    </ul>
+                    <div className="heading1" class="text-primary fw-medium fs-4">Chính sách khiếu nại </div>
+                    <ol class="list-group list-group-numbered">
+                        <li class="list-group-item fw-medium"><p class="d-inline">Đối tượng khiếu nại:</p>
+                        <p class="fw-normal">
+                            Là tổ chức, cá nhân có sử dụng các sản phẩm, dịch vụ do BK
+                            Robotic cung cấp (trường hợp đặc biệt khách hàng có thể ủy quyền
+                            cho người đại diện hợp pháp).
+                        </p>
+                        </li>
+                        <li class="list-group-item fw-medium"><p class="d-inline">Hình thức khiếu nại:</p>
+                        <p class="fw-normal">
+                            Khách hàng khi có khiếu nại, phản ánh về sản phẩm, dịch vụ do BK
+                            Robotic cung cấp có thể khiếu nại trực tiếp tại các Showroom/Đại
+                            lí hoặc gián tiếp bằng cách gọi điện đến cửa hàng, gửi mail, gửi
+                            văn bản hoặc các hình thức khác…
+                        </p>
+                        </li>
+                        <li class="list-group-item fw-medium"><p class="d-inline">Nguyên tắc giải quyết:</p>
+                        <p class="fw-normal">
+                            BK Robotic có quyền từ chối và không giải quyết các khiếu nại
+                            không có cơ sở, bằng chứng hoặc không trực thuộc đơn vị giải
+                            quyết.
+                        </p>
+                        </li>
+                    </ol>
+                    <div className="heading1" class="text-primary fw-medium fs-4">Quy trình xử lý khiếu nại</div>
+                    <p class="fw-medium">
+                        Bước 1. Tiếp nhận và hồi âm khiếu nại
+                    </p>
+                    <p>
+                        Mọi CBNV, đơn vị, Showroom thuộc BK Robotic đều có trách nhiệm tiếp
+                        nhận phản ánh, khiếu nại của khách hàng. – Gửi văn bản hồi âm khiếu
+                        nại trong vòng 03 ngày kể từ ngày nhận được khiếu nại (đối với khiếu
+                        nại bằng văn bản, email, điện thoại…) hoặc gửi khách hàng bản copy
+                        phiếu tiếp nhận khiếu nại có xác nhận của cấp TP Dịch vụ Khách hàng
+                        đối với khiếu nại trực tiếp tại điểm giao dịch.
+                    </p>
+                    <p class="fw-medium">
+                        Bước 2: Xác minh, xử lý
+                    </p>
+                    <p>
+                        Sau khi tiếp nhận được phản ánh, khiếu nại của khách hàng, bộ phận
+                        tiếp nhận sẽ chủ động kiểm tra, giải quyết trong phạm vi chức năng
+                        và quyền hạn của mình. – Các khiếu nại không thuộc thẩm quyền giải
+                        quyết của bộ phận tiếp nhận sẽ được phối hợp chuyển cấp cao hơn để
+                        giải quyết theo thẩm quyền (Không quá ½ ngày kể từ khi tiếp nhận).
+                    </p>
+                    <p class="fw-medium">
+                        Bước 3: Đơn vị, Cá nhân có thẩm quyền xem xét, giải quyết{" "}
+                    </p>
+                    <p>
+                        Đơn vị, cá nhân thuộc thẩm quyền theo quy định của BK Robotic tiến
+                        hành kiểm tra, xác minh thông tin khiếu nại của khách hàng để đưa ra
+                        kết luận cuối cùng
+                    </p>
+                    <p class="fw-medium">
+                        Bước 4: Trả lời khách hàng
+                    </p>
+                    <p>
+                        Khi có kết quả kiểm tra, xác minh BK Robotic sẽ trả lời khách hàng
+                        theo nhiều hình thức: Gọi điện thoại, đến gặp trực tiếp, gửi văn bản
+                        phúc đáp, gửi mail……tùy theo hình thức khiếu nại ban đầu. – Nếu
+                        khách hàng không đồng ý với kết quả giải quyết: Trong thời gian 30
+                        ngày kế tiếp bộ phận chức năng có trách nhiệm kiểm tra lại từ đầu
+                        thông tin khiếu nại và phúc đáp cho khách hàng.
+                    </p>
+                    <p class="fw-medium">
+                        Bước 5: Kết thúc khiếu nại
+                    </p>
+                    <p>
+                        Lưu hồ sơ và kết thúc khiếu nại.
+                    </p>
+                    </div>
+                </div>
+            `,
+        security: `
+                <div className="ThePolicy" class="container-fluid text-start border border-dark rounded-3">
+                    <div className="policy-header" class="text-center fw-bold fs-2">
+                        Chính sách bảo mật
+                    </div>
+                    <div className="policy-content">
+                        <div className="heading1" class="text-primary fw-medium fs-4">
+                            Chúng tôi thu thập những thông tin nào?
+                        </div>
+                        <p>
+                            Chúng tôi thu thập thông tin từ bạn khi bạn đăng ký trên trang web của chúng tôi, đặt hàng, đăng ký nhận
+                            bản tin của chúng tôi hoặc điền vào một biểu mẫu.
+                        </p>
+                        <p>
+                            Khi đặt hàng hoặc đăng ký trên trang web của chúng tôi, bạn có thể được yêu cầu nhập của bạn: tên, địa
+                            chỉ email hoặc địa chỉ gửi thư. Bạn có thể truy cập trang web của chúng tôi nặc danh.
+                        </p>
+                        <div className="heading1" class="text-primary fw-medium fs-4">
+                            Chúng tôi sử dụng thông tin của bạn cho những mục đích gì?
+                        </div>
+                        <p>
+                            Bất kỳ thông tin chúng tôi thu thập từ bạn có thể được sử dụng theo một trong các cách sau đây:
+                        </p>
+                        <ul>
+                            <li>
+                                Để cá nhân hóa trải nghiệm của bạn (thông tin của bạn sẽ giúp chúng tôi đáp ứng tốt hơn nhu cầu cá
+                                nhân của bạn).
+                            </li>
+                            <li>
+                                Để cải thiện trang web của chúng tôi (chúng tôi liên tục cố gắng để cải thiện các dịch trang web của
+                                chúng tôi dựa trên những thông tin và phản hồi chúng tôi nhận được từ bạn).
+                            </li>
+                            <li>Để cải thiện dịch vụ khách hàng (thông tin của bạn sẽ giúp chúng tôi để có hiệu quả hơn để đáp ứng
+                                yêu cầu dịch vụ khách hàng của bạn và nhu cầu hỗ trợ).
+                            </li>
+                            <li>
+                                Để xử lý các giao dịch.
+                            </li>
+
+                        </ul>
+                        <p>
+                            Thông tin của bạn, dù công khai hay ẩn danh, sẽ không được bán, trao đổi, chuyển nhượng, hoặc cho bất kỳ
+                            công ty nào khác với bất kỳ lý do nào, mà không có sự đồng ý của bạn, khác hơn là cho mục đích rõ ràng
+                            của việc cung cấp các sản phẩm mua hoặc dịch vụ yêu cầu.
+                        </p>
+                        <ul>
+                            <li>
+                                Để quản lý một cuộc thi, khuyến mãi, khảo sát, tính năng trang web khác.
+                            </li>
+                            <li>
+                                Để gửi email định kỳ.
+                            </li>
+                            <li>Các địa chỉ email mà bạn cung cấp được xử lý, có thể được sử dụng để gửi cho bạn các thông tin và
+                                cập nhật liên quan đến đặt hàng của bạn, ngoài việc tiếp nhận thông tin mới từ công, cập nhật, sản
+                                phẩm hoặc dịch vụ có liên quan thường xuyên, vv…
+
+                            </li>
+                            <li>
+                                Lưu ý: Nếu bất cứ lúc nào bạn muốn hủy đăng ký bạn có thực hiện từ phần hủy đăng ký nhận email trong
+                                tương lai, chúng được bố trí ở dưới cùng của mỗi email.
+                            </li>
+                        </ul>
+                        <div className="heading1" class="text-primary fw-medium fs-4">
+                            Chúng tôi bảo vệ thông tin của bạn như thế nào?
+                        </div>
+                        <p>
+                            Chúng tôi thực hiện một loạt các biện pháp an ninh để duy trì sự an toàn của thông tin cá nhân của bạn
+                            khi bạn đặt hàng hoặc nhập, gửi, hoặc truy cập thông tin cá nhân của bạn. </p>
+                        <p>
+                            Chúng tôi cung cấp việc sử dụng một máy chủ an toàn. Tất cả các thông tin nhạy cảm cung cấp được truyền
+                            qua Bảo mật (SSL) công nghệ Socket và sau đó mã hóa thành cơ sở dữ liệu các nhà cung cấp cổng thanh toán
+                            của chúng tôi chỉ có thể truy cập bởi những người được ủy quyền có quyền truy cập đặc biệt tới hệ thống
+                            như vậy, và được yêu cầu để giữ cho các thông tin bí mật.
+                        </p>
+                        <div className="heading1" class="text-primary fw-medium fs-4">
+                            Chúng tôi sử dụng cookies?
+                        </div>
+                        <p>
+                            Có (Cookie là những file nhỏ mà một trang web hoặc dịch vụ của nhà cung cấp của nó lưu ở máy tính của
+                            bạn trong ổ cứng thông qua trình duyệt Web của bạn (nếu bạn cho phép) cho phép các trang web hoặc các hệ
+                            thống cung cấp dịch vụ để nhận ra trình duyệt và máy tính của bạn và ghi nhớ thông tin nhất định).
+                        </p>
+                        <p>
+                            Chúng tôi sử dụng cookies để giúp chúng ta nhớ và xử lý các mặt hàng trong giỏ hàng của bạn, hiểu và lưu
+                            các sở thích của bạn cho lần truy cập sau và theo dõi các quảng cáo.</p>
+                        <div className="heading1" class="text-primary fw-medium fs-4">
+                            Do chúng tôi tiết lộ bất cứ thông tin cho bên ngoài?
+                        </div>
+                        <p>
+                            Chúng tôi không bán, thương mại, hoặc chuyển giao cho bên ngoài những thông tin cá nhân của bạn. Điều
+                            này không bao gồm các bên thứ ba đáng tin, người hỗ trợ chúng tôi trong việc điều hành trang web của
+                            chúng tôi, hoạt động kinh doanh của chúng tôi, hoặc phục vụ bạn, miễn là các bên đồng ý giữ bí mật thông
+                            tin này. Chúng tôi cũng có thể tiết lộ thông tin của bạn khi chúng tôi tin rằng việc này là tuân thủ
+                            pháp luật, thực thi chính sách trang web của chúng tôi, hay bảo vệ mọi người hoặc một người về quyền tài
+                            sản, hoặc sự an toàn. Tuy nhiên, thông tin không nhận dạng cá nhân có thể được cung cấp cho các bên khác
+                            để tiếp thị, quảng cáo, hoặc sử dụng khác.
+                        </p>
+                        <div className="heading1" class="text-primary fw-medium fs-4">
+                            Liên kết của bên thứ ba
+                        </div>
+                        <p>
+                            Chúng tôi có thể cung cấp sản phẩm của bên thứ ba trên trang web của chúng tôi. Những trang web của bên
+                            thứ ba có chính sách bảo mật riêng biệt và độc lập. Do đó chúng tôi không có trách nhiệm hoặc trách
+                            nhiệm đối với các nội dung và hoạt động của các trang web liên kết. Tuy nhiên, chúng tôi tìm cách để bảo
+                            vệ sự toàn vẹn của trang web của chúng tôi và hoan nghênh bất kỳ thông tin phản hồi về các trang web
+                            này.
+                        </p>
+                        <div className="heading1" class="text-primary fw-medium fs-4">
+                            Chính sách chỉ áp dụng website trực tuyến
+                        </div>
+                        <p>Chính sách bảo mật trực tuyến này chỉ áp dụng cho các thông tin thu thập được thông qua trang web của
+                            chúng tôi và không cho thông tin thu thập được ẩn.
+                        </p>
+                        <div className="heading1" class="text-primary fw-medium fs-4">
+                            Sự đồng ý của bạn
+                        </div>
+                        <p>
+                            Bằng cách sử dụng trang web của chúng tôi, bạn đồng ý với chính sách bảo mật của chúng tôi.
+
+                        </p>
+                        <div className="heading1" class="text-primary fw-medium fs-4">
+                            Thay đổi chính sách mật của chúng tôi
+                        </div>
+                        <p>
+                            Nếu chúng tôi quyết định thay đổi chính sách bảo mật của chúng tôi, chúng tôi sẽ đăng những thay đổi
+                            trên trang này.
+                        </p>
+                    </div>
+                </div>
+            `
+    };
+
+    function loadContent(page, link) {
+        document.getElementById('main-content').innerHTML = content[page] || '<h1>Page not found</h1>';
+        setActiveLink(link);
+    };
+
+    function setActiveLink(link) {
+            const links = document.querySelectorAll('.nav-link');
+            links.forEach(item => item.classList.remove('active'));
+            link.classList.add('active');
+        }
+
+    document.addEventListener('DOMContentLoaded', () => {
+            const defaultLink = document.querySelector('.nav-link[href="#"][onclick*="warranty"]');
+            loadContent('warranty', defaultLink);
+        });
+</script>
+

@@ -1,19 +1,19 @@
 const homeRouter = require('./homeRouter')
 const productRouter = require('./productRouter')
-const paymentRouter = require('./paymentRouter')
-const cancelRouter = require('./cancelRouter')
-const successRouter = require('./successRouter')
+const loginRouter = require('./loginRouter')
+const signupRouter = require('./signupRouter')
+const policyRouter = require('./policyRouter')
 
 function route(app){
     app.use('/', homeRouter)
 
+    app.use('/login', loginRouter)
+
+    app.use('/signup', signupRouter)
+
     app.use('/product', productRouter)
 
-    app.use('/payment', paymentRouter)
-
-    app.use('/cancel', cancelRouter)
-
-    app.use('/success', successRouter)
+    app.use('/policy', policyRouter)
 
 }
 
