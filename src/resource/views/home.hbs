@@ -1,10 +1,104 @@
-<div class="container-fluid d-flex justify-content-center pt-4">
-    <div class="card" style="width: 420px;">
-        <img src="../../img/book.jpg" class="card-img-top" alt="..." style="height: 400px; width: 400px">
-        <div class="card-body">
-            <h5 class="card-title fw-bolder">Bí mật của may mắn - Ebook độc quyền</h5>
-            <p class="card-text text-start">Câu chuyện trong Bí Mật Của May Mắn hấp dẫn như thần thoại với những chân lý thực tế và vĩnh hằng của cuộc sống mang lại cho người đọc niềm tin, hy vọng, những trải nghiệm và lý giải tại sao một số người luôn gặp được may mắn trong khi những người khác lại không có. Cuốn sách đã mang đến cho độc giả một cái nhìn thú vị và sâu sắc về những điều kiện cần thiết để tạo ra – và duy trì – sự may mắn trong mỗi cuộc đời chúng ta.</p>
-            <a href="http://localhost:3000/product/" class="btn btn-success" style="width: 50%;dispaly: flex; align-items:center">Mua hàng</a>
+{{!-- Carousel Slide --}}
+<div id="carouselExampleCaptions" class="carousel slide">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0" class="active" aria-current="true"
+            aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active" style="height: 600px;">
+            <img src="../../../img/lance-reis-DQnYSjNO_II-unsplash.jpg" class="d-block w-100" style="height: fill-content;">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>First slide label</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+            </div>
+        </div>
+        <div class="carousel-item" style="height: 600px;">
+            <img src="../../../img/lance-reis-DQnYSjNO_II-unsplash.jpg" class="d-block w-100" style="height: fit-content;">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Some representative placeholder content for the second slide.</p>
+            </div>
+        </div>
+        <div class="carousel-item" style="height: 600px;">
+            <img src="../../../img/lance-reis-DQnYSjNO_II-unsplash.jpg" class="d-block w-100" style="height: fit-content;">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button"
+        data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button"
+        data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+{{!-- Notifications fiels --}}
+<fieldset class="border rounded-2 p-3 mt-3">
+    <legend class="float-none w-auto px-3">Thông báo</legend>
+    <div class="container text-start">
+        <div class="row">
+            <div class="col">
+                <ul>
+                    <li>Thông báo 1</li>
+                    <li>Thông báo 2</li>
+                </ul>
+            </div>
+            <div class="col">   
+                <ul>
+                    <li>Thông báo 3</li>
+                    <li>Thông báo 4</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</fieldset>
+{{!-- Cards --}}
+<div class="row row-cols-1 row-cols-md-4 g-4" style="margin-top: 15px;">
+    <div class="col">
+        <div class="card h-100">
+            <img src="../../img/welcome coupon.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">COUPON CHÀO MỪNG</h5>
+                <p class="card-text">Tải ngay ứng đụng để nhận những ưu đãi cho đơn hàng đầu tiên</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+            <img src="../../img/ma vach.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">QUÉT MÃ VẠCH SẢN PHẨM</h5>
+                <p class="card-text">Quét mã vạch trên sản phẩm để kiểm tra</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+            <img src="../../img/nhận thông báo.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">NHẬN THÔNG BÁO MỚI NHẤT</h5>
+                <p class="card-text">Nhận thông tin mưới nhất</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+            <img src="../../img/ưu đãi.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">ƯU ĐÃI ĐỌC QUYỀN</h5>
+                <p class="card-text">Giá đặc biệt chỉ dành cho thành viên</p>
+            </div>
         </div>
     </div>
 </div>

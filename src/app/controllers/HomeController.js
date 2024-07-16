@@ -4,6 +4,12 @@ class HomeController{
         res.render('home',{
             layout: 'main'
         })
+    };
+
+    showroom(req, res){
+        res.render('showroom',{
+            layout: 'main'
+        })
     }
    
 }

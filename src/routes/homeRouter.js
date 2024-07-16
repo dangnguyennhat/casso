@@ -5,5 +5,6 @@ const homeController=require('../app/controllers/HomeController')
 
 router.get('/', homeController.home)
 
+router.get('/showroom', homeController.showroom)
 
 module.exports = router

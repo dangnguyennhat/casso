@@ -1,28 +1,44 @@
-<!-- Navbar-->
-<nav class="navbar navbar-expand-lg sticky-top" style="background-color: #77DD77; height: 110px">
+<nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <div>
-      <a class="navbar-brand fs-1 fw-semibold" href="http://localhost:3000/">EBOOK STORE</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
+    <a class="navbar-brand" href="/">
+      <img src="../../../img/hcmut.png" style="height: 80px; width: 80px">
+    </a>
+    <a class="navbar-brand" href="/">
+      <h3 style="font-size: 150%;">UNI CLO</h3>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active fs-5" aria-current="page" href="http://localhost:3000/">Trang chủ</a>
+          <a class="nav-link" aria-current="page" href="/"><h6 style="font-size: 125%;">Trang chủ</h6></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active fs-5" aria-current="page" href="http://localhost:3000/product/">Ebook</a>
+          <a class="nav-link" href="/product"><h6 style="font-size: 125%;">Sản phẩm</h6></a>
         </li>
-      </ul>
-    </div>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link fs-5" href="#">Trợ giúp</a>
+          <a class="nav-link" href="/showroom"><h6 style="font-size: 125%;">Showroom</h6></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><h6 style="font-size: 125%;">Tin tức</h6></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/policy"><h6 style="font-size: 125%;">Chính sách</h6></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><h6 style="font-size: 125%;">Hỗ trợ</h6></a>
         </li>
       </ul>
+      <form class="d-flex mx-4" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-primary" type="submit" style="width: 130px;">Tìm kiếm</button>
+      </form>
+      <div class="d-flex align-items-center">
+        <a class="nav-link" href="#"><i class="bi bi-heart" style="font-size: 150%;"></i></a>
+        <a class="nav-link mx-4" href="#"><i class="bi bi-cart" style="font-size: 150%"></i></a>
+        <a class="nav-link" href="/login"><i class="bi bi-person" style="font-size: 150%"></i></a>
+      </div>
     </div>
   </div>
 </nav>

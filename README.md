@@ -1,12 +1,4 @@
-# casso
-A test of Casso company
+# E-commerce website
 
-Clone the repository and install dependencies:
-    1. npm install
-
-To run:
-    In terminal, text "npm start"
-    
-In Chrome:
-    URL: http://localhost:3000/
-    
+This is a simple e-commerce website made using NodeJS, Handlebars. It is a simple website sell clothes
+depend on UNI CLO
